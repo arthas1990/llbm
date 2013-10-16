@@ -7,6 +7,15 @@
 // --------------------------------------------------
 
 
+
+// User Created vars
+// -------------------------
+
+@green:					#7ba047;
+@darkgreen:				#344d10;
+@brown:					#4f2709;
+@tan:					#f2ede5;
+
 // Grays
 // -------------------------
 @black:                 #000;
@@ -22,7 +31,7 @@
 // -------------------------
 @blue:                  #049cdb;
 @blueDark:              #0064cd;
-@green:                 #46a546;
+/* @green:                 #46a546; */
 @red:                   #9d261d;
 @yellow:                #ffc40d;
 @orange:                #f89406;
@@ -38,24 +47,24 @@
 
 // Links
 // -------------------------
-@linkColor:             #1397b8;
+@linkColor:             @green;
 @linkColorHover:        darken(@linkColor, 15%);
 
 
 // Typography
 // -------------------------
 @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@serifFontFamily:       'Roboto Slab', sans-serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 /* >>> JUI >>> */
-@baseFontSize:          13px;
+@baseFontSize:          14px;
 /* <<< JUI <<< */
-@baseFontFamily:        @sansFontFamily;
+@baseFontFamily:        @serifFontFamily;
 /* >>> JUI >>> */
-@baseLineHeight:        18px;
+@baseLineHeight:        1.4em;
 /* <<< JUI <<< */
-@altFontFamily:         @serifFontFamily;
+@altFontFamily:         @sansFontFamily;
 
 @headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold

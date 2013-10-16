@@ -112,30 +112,31 @@ else
 	. ($params->get('fluidContainer') ? ' fluid' : '');
 ?>">
 	<!-- Header -->
+<hr class="texture container-fluid" />
+<div class="container-fluid main">
 	<header class="header" role="banner">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<div class="header-inner clearfix">
-				<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-					<?php echo $logo;?> <?php if ($this->params->get('sitedescription')) { echo '<div class="site-description">'. htmlspecialchars($this->params->get('sitedescription')) .'</div>'; } ?>
-				</a>
-				<div class="header-search pull-right">
-					<jdoc:include type="modules" name="position-0" style="none" />
+			<div class="header-inner clearfix container-fluid">
+				<div class="row-fluid">
+					<div class="span3">
+						<a class="pull-left logo" href="<?php echo $this->baseurl; ?>">
+							<img src="/templates/give/images/logo.png" alt=""/>
+						</a>
+					</div>
+					<div class="header-search pull-right span9">
+						<jdoc:include type="modules" name="position-0" style="none" />
+					</div>
 				</div>
 			</div>
-		</div>
 	</header>
 	<?php if ($this->countModules('position-1')) : ?>
 	<nav class="navigation" role="navigation">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
 			<jdoc:include type="modules" name="position-1" style="none" />
-		</div>
 	</nav>
 	<?php endif; ?>
 	<?php if ($this->countModules('banner')) : ?>
 	<jdoc:include type="modules" name="banner" style="xhtml" />
 	<?php endif; ?>
-	<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-		<div class="row<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
+		<div class="row-fluid">
 			<?php if ($this->countModules('position-8')) : ?>
 			<!-- Begin Sidebar -->
 			<div id="sidebar" class="span3">
@@ -161,16 +162,15 @@ else
 			</div>
 			<?php endif; ?>
 		</div>
-	</div>
 	<!-- Footer -->
 	<footer class="footer" role="contentinfo">
 		<jdoc:include type="modules" name="footer" style="none" />
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<hr />
-			<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_GIVE_BACKTOTOP'); ?></a></p>
-			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
-		</div>
 	</footer>
-	<jdoc:include type="modules" name="debug" style="none" />
+</div>
+<div class="container-fluid">
+	<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_GIVE_BACKTOTOP'); ?></a></p>
+	<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
+</div>
+<jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>
