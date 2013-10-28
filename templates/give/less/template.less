@@ -310,6 +310,11 @@ main {
 	padding-left: 20px;
 	padding-right: 20px;
 }
+@media (min-width:768px) {
+	.nav-collapse {
+		height: auto;
+	}
+}
 /* Navigation Submenus */
 // The dropdown menu (ul)
 // ----------------------
@@ -387,6 +392,13 @@ main {
 	  border-left: 6px solid transparent;
 	  content: '';
 	}
+}
+.navbar .btn-navbar {
+	background: @green;
+}
+.navbar .btn-navbar:hover,
+.navbar .btn-navbar:focus {
+	background: lighten(@green,5%)
 }
 
 // Hover state
@@ -655,77 +667,82 @@ div.current dd.tabs {
 .adoption-steps {
 	margin: 20px 0;
 }
-.panel.alt.steps {
-	max-height: 260px;
-	border-bottom: 12px solid @tan;
-	padding: 20px 0 0;
-	
-	> .row-fluid {
-		position: relative;
-	}
-	
-	.span3 img {
-		position: absolute;
-		bottom: 0;
-		left: -20px;
-	}
-	
-	.circle {
-		background: @tan;
-		width: 187px;
-		height: 187px;
-		text-align: center;
-		box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	h4 {
-		color: @green;
-		font-size: 250%;
-		font-weight: normal;
-		margin: 0;
-		padding: 20px 0 15px;
-		.cursive2;
-	}
-	.heart {
-		.heart2;
-		background-position: center top;
-		width: 132px;
-		height: 114px;
-		margin-left: auto;
-		margin-right: auto;
+@media (min-width:768px) {
+
+	.panel.alt.steps {
+		max-height: 260px;
+		border-bottom: 12px solid @tan;
+		padding: 20px 0 0;
 		
-		span {
-			display: block;
-			padding: 20px 5px 0;
-			text-transform: uppercase;
-			color: @brown;
-			
+		> .row-fluid {
+			position: relative;
 		}
-	}
-	
-	ul li {
-		text-align: center;
 		
-		a {
+		.span3 img {
+			position: absolute;
+			bottom: 0;
+			left: -20px;
+		}
+		
+		.circle {
+			background: @tan;
+			width: 187px;
+			height: 187px;
+			text-align: center;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		h4 {
+			color: @green;
+			font-size: 250%;
+			font-weight: normal;
 			margin: 0;
+			padding: 20px 0 15px;
+			.cursive2;
+		}
+		.heart {
+			.heart2;
+			background-position: center top;
+			width: 132px;
+			height: 114px;
+			margin-left: auto;
+			margin-right: auto;
 			
-			span.link {
-				font-style: italic;
-				margin: 15px 0;
+			span {
 				display: block;
+				padding: 20px 5px 0;
+				text-transform: uppercase;
+				color: @brown;
+				
 			}
 		}
-		a:hover {
-			text-decoration: none;
+		
+		ul li {
+			text-align: center;
+			
+			a {
+				margin: 0;
+				
+				span.link {
+					font-style: italic;
+					margin: 15px 0;
+					display: block;
+				}
+			}
+			a:hover {
+				text-decoration: none;
+			}
+		}
+		ul li:hover .circle {
+			background: darken(@tan, 2%);
+			
 		}
 	}
-	ul li:hover .circle {
-		background: darken(@tan, 2%);
-		
-	}
+	
 }
+
 ul.half {
 	margin-left: 0;
 	list-style: disc inside none;
@@ -737,6 +754,34 @@ ul.half {
 	li:nth-child(odd) {
 		clear: both;
 	}
+}
+@media (max-width:599px) {
+	.panel.steps {
+		.span3 {
+			display: none;
+		}
+	}
+}
+@media (min-width:600px) and (max-width:768px) {
+	.panel.steps {
+	
+		.span3 {
+			display: none;
+		}
+		.span9 {
+			width: 100%;
+			margin: 0;
+			
+			.span4 {
+				float: left;
+				width: 32%;
+				margin-left: 2%;
+			}
+			.span4:first-of-type {
+				margin-left: 0;
+			}
+		}
+	}	
 }
 /* Dotted Background headings */
 .dotted-border-top {

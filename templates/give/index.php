@@ -111,26 +111,38 @@ else
 	. ($itemid ? ' itemid-' . $itemid : '')
 	. ($params->get('fluidContainer') ? ' fluid' : '');
 ?>">
-	<!-- Header -->
 <hr class="texture container-fluid" />
+
 <div class="container-fluid main">
+	<!-- Header -->
 	<header class="header" role="banner">
-			<div class="header-inner clearfix container-fluid">
-				<div class="row-fluid">
-					<div class="span3">
+			<div class="container-fluid">
+				<div class="navbar visible-phone">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+		</div>
+	</div>
+				<div class="header-inner clearfix row-fluid">
+					<div class="header-search pull-right span8">
+						<jdoc:include type="modules" name="position-0" style="none" />
+					</div>
+					<div class="span4">
 						<a class="pull-left logo" href="<?php echo $this->baseurl; ?>">
 							<img src="/templates/give/images/logo.png" alt=""/>
 						</a>
-					</div>
-					<div class="header-search pull-right span9">
-						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
 				</div>
 			</div>
 	</header>
 	<?php if ($this->countModules('position-1')) : ?>
 	<nav class="navigation" role="navigation">
+		<div class="container-fluid">
 			<jdoc:include type="modules" name="position-1" style="none" />
+		</div>
 	</nav>
 	<?php endif; ?>
 	<?php if ($this->countModules('banner')) : ?>
